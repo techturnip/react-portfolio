@@ -1,0 +1,11 @@
+.nav {
+  background: $raisin-black;
+  height: 8vh;
+  @include box-shadow;
+  font-size: 1.3rem;
+
+  .navbar-brand {
+    font-family: $title-font;
+    font-size: 2rem;
+  }
+}
