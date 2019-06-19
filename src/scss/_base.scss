@@ -1,3 +1,16 @@
 body {
   font-family: $primary-font;
 }
+
+// White Trans Content Box
+.white-trans-box {
+  background: $white-trans;
+  box-shadow: 0 4px 8px $shadow;
+  border: solid 4px $color-primary-0;
+  border-radius: 10px;
+}
+
+// Circle images
+.img-circle {
+  border-radius: 100%;
+}

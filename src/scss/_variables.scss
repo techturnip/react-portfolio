@@ -35,6 +35,7 @@ $raisin-black: rgb(31, 36, 39);
 $raisin-black-trans: rgba(34, 34, 34, .8);
 $onyx: #393838;
 $white: #ececec;
+$white-trans: rgba(255, 255, 255, 0.7);
 $black: #000;
 $shadow: rgba(51, 51, 51, .8);
 
@@ -48,6 +49,10 @@ $nav-bg-color: $color-primary-0;
 $nav-text-color: $dark-text;
 // Home Colors
 $title-color: $dark-text;
+
+// Layout variables
+// Navigation
+$nav-height: 74px;
 
 // Media Variables
 $break-sm: 'only screen and (max-width: 768px)';

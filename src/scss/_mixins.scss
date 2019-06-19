@@ -7,13 +7,6 @@
   flex-wrap: $wrap;
 }
 
-@mixin background($img, $size: 300px, $attach: fixed) {
-  background: $img;
-  background-attachment: $attach;
-  background-size: auto $size;
-
-}
-
 @mixin box-shadow($size: 5px, $blur: 10px) {
   box-shadow: 0 $size $blur $shadow;
 }
@@ -30,4 +23,11 @@
   @media #{$break-sm} {
     font-size: $sm-font;
   }
+}
+
+@mixin nav-adjust() {
+  height: 100vh;
+  margin-top: -$nav-height;
+  overflow: hidden;
+  width: 100%;
 }
