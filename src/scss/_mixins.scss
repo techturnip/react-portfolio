@@ -1,12 +1,21 @@
 // Mixins
+@mixin flex-align($justify: flex-start, $align: flex-start, $dir: row, $wrap: wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+}
+
 @mixin background($img, $size: 300px, $attach: fixed) {
   background: $img;
-  background-size: auto $size;
   background-attachment: $attach;
+  background-size: auto $size;
+
 }
 
 @mixin box-shadow($size: 5px, $blur: 10px) {
-  box-shadow: 0 $size $blur rgba(51, 51, 51, 0.5);
+  box-shadow: 0 $size $blur $shadow;
 }
 
 @mixin resp-text($lg-font, $md-font, $sm-font) {

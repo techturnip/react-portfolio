@@ -5,18 +5,49 @@ $primary-font: 'Quicksand',
 sans-serif;
 
 // Colors
-$outer-space: #494949;
-$silver-chalice: #acacac;
-$raisin-black: #222222;
-$raisin-black-trans: rgba(34, 34, 34, 0.5);
-$gainsboro: #dbdada;
-$trolley-grey: #7c7a7a;
+// Oranges
+$color-primary-0: #FD6347; // Main Primary color */
+$color-primary-1: #FFA695;
+$color-primary-2: #FF816A;
+$color-primary-3: #EE3B1A;
+$color-primary-4: #B9250A;
+
+$color-secondary-1-0: #31839E; // Main Secondary color (1) */
+$color-secondary-1-1: #7EBED3;
+$color-secondary-1-2: #509DB6;
+$color-secondary-1-3: #157595;
+$color-secondary-1-4: #0A5973;
+
+$color-secondary-2-0: #A2E841; // Main Secondary color (2) */
+$color-secondary-2-1: #CAF58F;
+$color-secondary-2-2: #B4EF63;
+$color-secondary-2-3: #89DA18;
+$color-secondary-2-4: #66A909;
+
+$color-complement-0: #34B961; // Main Complement color */
+$color-complement-1: #83DFA2;
+$color-complement-2: #55CB7D;
+$color-complement-3: #13AF48;
+$color-complement-4: #078733;
+
+// Additional colors
+$raisin-black: rgb(31, 36, 39);
+$raisin-black-trans: rgba(34, 34, 34, .8);
 $onyx: #393838;
-$pale-pink: #ffd2d8;
-$fiery-rose: #ff5d73;
-$wine: #742b35;
 $white: #ececec;
-$black: #000000;
+$black: #000;
+$shadow: rgba(51, 51, 51, .8);
+
+// Color Scheme:
+// General
+$dark-text: $onyx;
+$light-text: $white;
+
+// Navigation Colors
+$nav-bg-color: $color-primary-0;
+$nav-text-color: $dark-text;
+// Home Colors
+$title-color: $dark-text;
 
 // Media Variables
 $break-sm: 'only screen and (max-width: 768px)';

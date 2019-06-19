@@ -14,7 +14,7 @@ import {
   Container
 } from "reactstrap";
 
-export default class NavBar extends Component {
+export default class Navigation extends Component {
   constructor(props) {
     super(props);
 
@@ -32,7 +32,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Navbar className="nav" dark expand="md">
+      <Navbar className="nav" light expand="md">
         <Container>
           <NavbarBrand href="/">Tyler Turnipseed</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
