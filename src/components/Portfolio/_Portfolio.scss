@@ -1,0 +1,31 @@
+.portfolio {
+  @include flex-align(center, center);
+  @include nav-adjust;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .portfolio-items {
+    @include flex-align(center, center);
+  }
+
+  .portfolio-item {
+    display: flex;
+    align-self: stretch;
+
+    .item-wrapper {
+      padding: 1rem;
+
+      .item-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .item-btns {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

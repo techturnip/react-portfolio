@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -7,10 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Container
 } from "reactstrap";
 
@@ -34,31 +30,38 @@ export default class Navigation extends Component {
     return (
       <Navbar className="nav" light expand="md">
         <Container>
-          <NavbarBrand href="/">Tyler Turnipseed</NavbarBrand>
+          <NavbarBrand href="/">techTurnip</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link className="nav-link" to="/">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  exact
+                  to="/"
+                >
                   Home
-                </Link>
+                </NavLink>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/about">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/about"
+                >
                   About
-                </Link>
+                </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/portfolio"
+                >
+                  Portfolio
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

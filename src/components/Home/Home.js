@@ -1,26 +1,15 @@
-import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
+import React from "react";
 import homeSvg from "./home-bg.svg";
 
-const bgStyle = {
-  backgroundImage: "url(" + homeSvg + ")"
-};
-
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <header style={bgStyle} className="home text-dark">
-        <Container className="wrapper" fluid="true">
-          <div className="title-wrapper white-trans-box">
-            <h1 className="title">Tyler Turnipseed</h1>
-            <p className="subtitle">Web Developer</p>
-          </div>
-        </Container>
-      </header>
-    );
-  }
+export default function Header(props) {
+  return (
+    <header style={props.bgSvg(homeSvg)} className="home text-dark">
+      <div className="wrapper">
+        <div className="title-wrapper white-trans-box">
+          <h1 className="title">Tyler Turnipseed</h1>
+          <p className="subtitle">Web Developer</p>
+        </div>
+      </div>
+    </header>
+  );
 }
