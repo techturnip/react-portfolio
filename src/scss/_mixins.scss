@@ -28,6 +28,5 @@
 @mixin nav-adjust() {
   height: 100vh;
   margin-top: -$nav-height;
-  overflow: hidden;
   width: 100%;
 }

@@ -4,6 +4,11 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
+  padding: 10%;
+
+  @media #{$break-md} {
+    padding-top: 74px;
+  }
 
   .portfolio-items {
     @include flex-align(center, center);
@@ -11,7 +16,21 @@
 
   .portfolio-item {
     display: flex;
+    max-width: 20%;
     align-self: stretch;
+    margin: .5rem;
+
+    @media #{$break-xl} {
+      max-width: 31%;
+    }
+
+    @media #{$break-lg} {
+      max-width: 48%;
+    }
+
+    @media #{$break-md} {
+      max-width: 100%;
+    }
 
     .item-wrapper {
       padding: 1rem;

@@ -4,7 +4,7 @@ import { Col, Button } from "reactstrap";
 export default function PortfolioItem(props) {
   const { name, url, repo, desc } = props.itemDetails;
   return (
-    <Col className="portfolio-item">
+    <div className="portfolio-item">
       <div className="item-wrapper white-trans-box">
         <div className="item-body">
           <div className="item-content">
@@ -22,6 +22,6 @@ export default function PortfolioItem(props) {
           </div>
         </div>
       </div>
-    </Col>
+    </div>
   );
 }

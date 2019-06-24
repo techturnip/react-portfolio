@@ -1,45 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
+import Pagination from "../Pagination/Pagination";
 import { Container, Row } from "reactstrap";
 import PortfolioItem from "./PortfolioItem.js";
 import portfolioSvg from "./portfolio.svg";
+import portfolioData from "./portfolioData";
 
-const portfolioItems = [
-  {
-    id: 0,
-    name: "Tipsease",
-    url: "https://tipsease.io/",
-    repo: "https://github.com/tipsease-webpt6/marketing_tipsease",
-    desc:
-      "Marketing website built in collaboration with a fellow cohort student at Lambda School for a fictitious SaaS application that allows you to tip service workers directly."
-  },
-  {
-    id: 1,
-    name: "Contact Manager",
-    url: "https://techturnip.github.io/contactmanager/",
-    repo: "https://github.com/techturnip/contactmanager",
-    desc:
-      "Contact Manager project is a CRUD app from the Modern React course by Brad Traversy featuring the Materialize CSS framework with initial data automatically populated via the JSONPlaceholder api."
-  },
-  {
-    id: 2,
-    name: "Resume Portfolio Design",
-    url: "https://techturnip.github.io/Resume-Portfolio/",
-    repo: "https://github.com/techturnip/Resume-Portfolio",
-    desc:
-      "A Resume & Portfolio website of my own design. Built using Bootstrap, Font Awesome, and Sass with gulp task automation for development ans Sass compiling."
+export default class Portfolio extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+      pageOfItems: []
+    };
+
+    this.onChangePage = this.onChangePage.bind(this);
   }
-];
 
-export default function Portfolio(props) {
-  return (
-    <div style={props.bgSvg(portfolioSvg)} className="portfolio">
-      <Container>
+  componentDidMount() {
+    axios
+      .get("http://localhost:1337/portfolios")
+      .then(response => {
+        this.setState(() => ({ data: response.data }));
+      })
+      .catch(error => {
+        console.error("Server Error", error);
+      });
+  }
+
+  onChangePage(pageOfItems) {
+    // update state with new page of items
+    this.setState({ pageOfItems: pageOfItems });
+  }
+
+  render() {
+    return (
+      <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
         <Row className="portfolio-items">
-          {portfolioItems.map(item => (
+          {this.state.pageOfItems.map(item => (
             <PortfolioItem itemDetails={item} />
           ))}
         </Row>
-      </Container>
-    </div>
-  );
+        <Row>
+          <Pagination
+            items={this.state.data}
+            onChangePage={this.onChangePage}
+          />
+        </Row>
+      </div>
+    );
+  }
 }
