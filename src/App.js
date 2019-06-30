@@ -5,8 +5,10 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
+import PortfolioItem from "./components/Portfolio/PortfolioItem";
 import Blog from "./components/Blog/Blog";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 import "./App.scss";
 
 export default class App extends Component {
@@ -37,6 +39,7 @@ export default class App extends Component {
           render={props => <About {...props} bgSvg={this.backgroundSvg} />}
         />
         <Route
+          exact
           path="/portfolio"
           render={props => (
             <Portfolio
@@ -47,8 +50,24 @@ export default class App extends Component {
           )}
         />
         <Route
+          path="/portfolio/:id"
+          render={props => (
+            <PortfolioItem
+              {...props}
+              bgSvg={this.backgroundSvg}
+              createMarkup={this.createMarkup}
+            />
+          )}
+        />
+        <Route
           path="/blog"
-          render={props => <Blog {...props} bgSvg={this.backgroundSvg} />}
+          render={props => (
+            <Blog
+              {...props}
+              bgSvg={this.backgroundSvg}
+              createMarkup={this.createMarkup}
+            />
+          )}
         />
       </div>
     );

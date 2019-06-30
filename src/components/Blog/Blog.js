@@ -33,7 +33,13 @@ export default class Blog extends Component {
 
         <div>
           {this.state.blogPosts.map(post => {
-            return <BlogPost key={post.id} post={post} />;
+            return (
+              <BlogPost
+                key={post.id}
+                post={post}
+                createMarkup={this.props.createMarkup}
+              />
+            );
           })}
         </div>
       </Container>

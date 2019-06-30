@@ -24,12 +24,12 @@
 
   .portfolio-item {
     display: flex;
-    max-width: 31%;
+    max-width: 48%;
     align-self: stretch;
     margin: .5rem;
 
     @media #{$break-xl} {
-      max-width: 31%;
+      max-width: 48%;
     }
 
     @media #{$break-lg} {
@@ -39,20 +39,42 @@
     @media #{$break-md} {
       max-width: 100%;
     }
+  }
 
-    .item-wrapper {
-      padding: 1rem;
+  .item-wrapper {
+    padding: 1rem;
 
-      .item-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+    .item-body {
+      height: 100%;
 
-        .item-btns {
-          align-self: center;
+      .fa {
+        margin-bottom: 1rem;
+      }
+
+
+      .item-btns {
+        @include flex-align();
+
+        a {
+          color: $item-btn-color;
+          margin: .5rem;
+
+          &:hover {
+            color: $item-btn-color-hover;
+          }
         }
       }
     }
+  }
+
+  .img-column {
+    display: flex;
+    align-content: center;
+
+  }
+
+  .img-fluid {
+    @include box-shadow;
+    border-radius: 10px;
   }
 }

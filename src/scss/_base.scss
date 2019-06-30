@@ -3,12 +3,32 @@ body {
   font-weight: 600;
 }
 
+// Links
+a {
+  color: rgb(83, 228, 194);
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(53, 189, 157);
+  }
+}
+
 // White Trans Content Box
 .white-trans-box {
   background: $white-trans;
-  box-shadow: 0 4px 8px $shadow;
   border: solid 4px $color-primary-0;
   border-radius: 10px;
+}
+
+// Hoverable Boxes
+.hoverable {
+  @include box-shadow(4px, 8px);
+  transition: .5s ease;
+
+  &:hover {
+    @include box-shadow(8px, 15px);
+    transform: translateY(-2px);
+  }
 }
 
 // Circle images

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Pagination from "../Pagination/Pagination";
-import { Container, Row, Button } from "reactstrap";
-import PortfolioItem from "./PortfolioItem.js";
+import { Row, Button } from "reactstrap";
 import portfolioSvg from "./portfolio.svg";
 
 export default class Portfolio extends Component {
@@ -21,7 +20,7 @@ export default class Portfolio extends Component {
     axios
       .get("http://127.0.0.1/wp/wp-json/wp/v2/portfolio")
       .then(response => {
-        this.setState(() => ({ data: response.data }));
+        this.setState({ data: response.data });
       })
       .catch(error => {
         console.error("Server Error", error);
@@ -34,11 +33,8 @@ export default class Portfolio extends Component {
   }
 
   clickHandler = (e, id) => {
-    if (
-      e.target.className.includes("item-wrapper") ||
-      e.target.className.includes("item-title") ||
-      e.target.className.includes("item-desc")
-    ) {
+    console.log(e.target);
+    if (!e.target.className.includes("btn")) {
       this.props.history.push(`/portfolio/${id}`);
     }
   };
@@ -61,7 +57,7 @@ export default class Portfolio extends Component {
               key={item.id}
               className="portfolio-item"
             >
-              <div className="item-wrapper white-trans-box">
+              <div className="item-wrapper hoverable white-trans-box">
                 <div className="item-body">
                   <div className="item-content">
                     <h3 className="item-title">{item.title.rendered}</h3>
@@ -72,18 +68,17 @@ export default class Portfolio extends Component {
                       )}
                     />
                   </div>
-
                   <div className="item-btns">
-                    <Button
+                    <a
                       className="mr-2"
                       target="_blank"
                       href={item.acf.github_url}
                     >
-                      Github
-                    </Button>
-                    <Button target="_blank" href={item.acf.demo_url}>
-                      Demo
-                    </Button>
+                      <i className="fa fa-4x fa-github-square" />
+                    </a>
+                    <a target="_blank" href={item.acf.demo_url}>
+                      <i className="fa fa-4x fa-external-link-square" />
+                    </a>
                   </div>
                 </div>
               </div>
