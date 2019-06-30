@@ -62,6 +62,15 @@ export default class Navigation extends Component {
                   Portfolio
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/blog"
+                >
+                  Blog
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

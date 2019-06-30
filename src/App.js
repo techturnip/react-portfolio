@@ -5,20 +5,22 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Blog from "./components/Blog/Blog";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  // This method will take in an svg file and return a style object to enable displaying an svg in the background.
   backgroundSvg(svg) {
     const bgStyle = {
       backgroundImage: "url(" + svg + ")"
     };
 
     return bgStyle;
+  }
+
+  createMarkup(content) {
+    return { __html: content };
   }
 
   render() {
@@ -36,7 +38,17 @@ export default class App extends Component {
         />
         <Route
           path="/portfolio"
-          render={props => <Portfolio {...props} bgSvg={this.backgroundSvg} />}
+          render={props => (
+            <Portfolio
+              {...props}
+              bgSvg={this.backgroundSvg}
+              createMarkup={this.createMarkup}
+            />
+          )}
+        />
+        <Route
+          path="/blog"
+          render={props => <Blog {...props} bgSvg={this.backgroundSvg} />}
         />
       </div>
     );

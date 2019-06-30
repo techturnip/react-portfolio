@@ -1,6 +1,8 @@
 .portfolio {
-  @include flex-align(center, center);
+  @include flex-align(space-evenly, center);
   @include nav-adjust;
+  flex-direction: column;
+  flex-wrap: nowrap;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -10,13 +12,19 @@
     padding-top: 74px;
   }
 
+  .portfolio-title {
+    @include resp-text(3.5rem, 3rem, 2rem);
+    font-size: 4rem;
+  }
+
   .portfolio-items {
     @include flex-align(center, center);
+    cursor: pointer;
   }
 
   .portfolio-item {
     display: flex;
-    max-width: 20%;
+    max-width: 31%;
     align-self: stretch;
     margin: .5rem;
 

@@ -1,8 +1,10 @@
 import React from "react";
-import { Col, Button } from "reactstrap";
+import { Button } from "reactstrap";
 
 export default function PortfolioItem(props) {
   const { name, url, repo, desc } = props.itemDetails;
+
+  console.log(props.itemDetails);
   return (
     <div className="portfolio-item">
       <div className="item-wrapper white-trans-box">
@@ -14,10 +16,10 @@ export default function PortfolioItem(props) {
 
           <div className="item-btns">
             <Button className="mr-2" target="_blank" href={repo}>
-              View Github
+              Github
             </Button>
             <Button target="_blank" href={url}>
-              View Live
+              Demo
             </Button>
           </div>
         </div>

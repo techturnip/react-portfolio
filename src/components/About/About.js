@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import aboutSvg from "./about.svg";
 import me from "./me.jpg";

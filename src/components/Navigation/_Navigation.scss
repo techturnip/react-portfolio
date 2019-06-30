@@ -12,4 +12,14 @@
     color: $nav-text-color;
     font-weight: 500;
   }
+
+  .container {
+    .collapse.show {
+      .navbar-nav {
+        .nav-item {
+          background: #fff;
+        }
+      }
+    }
+  }
 }
