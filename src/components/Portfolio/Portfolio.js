@@ -33,8 +33,8 @@ export default class Portfolio extends Component {
   }
 
   clickHandler = (e, id) => {
-    console.log(e.target);
-    if (!e.target.className.includes("btn")) {
+    let ele = e.target;
+    if (!ele.classList.contains("btn")) {
       this.props.history.push(`/portfolio/${id}`);
     }
   };

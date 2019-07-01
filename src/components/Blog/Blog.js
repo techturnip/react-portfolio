@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BlogPost from "./BlogPost";
 import { Container } from "reactstrap";
 import axios from "axios";
+import blogSvg from "./blog.svg";
 
 export default class Blog extends Component {
   constructor(props) {
@@ -24,25 +25,37 @@ export default class Blog extends Component {
   }
 
   render() {
-    console.log(this.state.blogPosts);
     return (
-      <Container>
-        <div>
-          <h1>This is the blog component!</h1>
-        </div>
+      <div style={this.props.bgSvg(blogSvg)} className="blog">
+        <Container>
+          <h1 className="blog-title">My Blog</h1>
 
-        <div>
-          {this.state.blogPosts.map(post => {
-            return (
-              <BlogPost
-                key={post.id}
-                post={post}
-                createMarkup={this.props.createMarkup}
-              />
-            );
-          })}
-        </div>
-      </Container>
+          <div className="blog-list">
+            {this.state.blogPosts.map(post => {
+              console.log(post);
+              const date = new Date(post.date);
+              const metaDate = date.toLocaleDateString();
+              return (
+                <div
+                  className="blog-list-card hoverable white-trans-box"
+                  key={post.id}
+                >
+                  <h4 className="blog-list-title">
+                    {post.title.rendered}
+                    <span className="blog-list-meta">{metaDate}</span>
+                  </h4>
+                  <p
+                    dangerouslySetInnerHTML={this.props.createMarkup(
+                      post.excerpt.rendered
+                    )}
+                    className="blog-list-excerpt"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </div>
     );
   }
 }
