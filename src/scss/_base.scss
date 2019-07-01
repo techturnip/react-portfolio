@@ -3,6 +3,14 @@ body {
   font-weight: 600;
 }
 
+// Page Wrapper
+.page-wrapper {
+  @include flex-align(center, center);
+  height: 100%;
+  width: 100%;
+  padding: 100px 1rem !important;
+}
+
 // Links
 a {
   color: rgb(83, 228, 194);

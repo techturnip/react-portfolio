@@ -4,13 +4,27 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 10%;
 
   p {
     margin: 0;
   }
 
-  .blog-title {
+  .blog-post-wrapper {
+    padding: 2rem;
+
+    .blog-post-content {
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    .blog-post-title {
+      @include flex-align(center, center);
+    }
+  }
+
+  .blog-title,
+  .blog-post-title {
     @include resp-text(3.75rem, 3.5rem, 3rem);
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -25,6 +39,11 @@
       cursor: pointer;
       padding: 1rem;
       flex-basis: 31%;
+      margin: 1rem;
+
+      @media #{$break-md} {
+        flex-basis: 100%;
+      }
     }
 
     .blog-list-title {
@@ -33,12 +52,13 @@
       font-weight: bold;
       margin: 0;
     }
+  }
 
-    .blog-list-meta {
-      font-weight: 500;
-      margin-left: .5rem;
-      color: $blog-list-meta-color;
-      font-size: 1rem;
-    }
+  .blog-list-meta,
+  .blog-post-meta {
+    font-weight: 500;
+    margin-left: .5rem;
+    color: $blog-list-meta-color;
+    font-size: 1rem;
   }
 }

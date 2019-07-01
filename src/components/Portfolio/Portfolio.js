@@ -44,53 +44,55 @@ export default class Portfolio extends Component {
     console.log(this.state);
     return (
       <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
-        <Row>
-          <h2 className="portfolio-title">
-            <strong>Check out my Portfolio!</strong>
-          </h2>
-        </Row>
-        <Row className="portfolio-items">
-          {this.state.data.map(item => (
-            <div
-              id={item.id}
-              onClick={e => this.clickHandler(e, item.id)}
-              key={item.id}
-              className="portfolio-item"
-            >
-              <div className="item-wrapper hoverable white-trans-box">
-                <div className="item-body">
-                  <div className="item-content">
-                    <h3 className="item-title">{item.title.rendered}</h3>
-                    <p
-                      className="item-desc"
-                      dangerouslySetInnerHTML={createMarkup(
-                        item.excerpt.rendered
-                      )}
-                    />
-                  </div>
-                  <div className="item-btns">
-                    <a
-                      className="mr-2"
-                      target="_blank"
-                      href={item.acf.github_url}
-                    >
-                      <i className="fa fa-4x fa-github-square" />
-                    </a>
-                    <a target="_blank" href={item.acf.demo_url}>
-                      <i className="fa fa-4x fa-external-link-square" />
-                    </a>
+        <div className="page-wrapper">
+          <Row>
+            <h2 className="portfolio-title">
+              <strong>Check out my Portfolio!</strong>
+            </h2>
+          </Row>
+          <Row className="portfolio-list">
+            {this.state.data.map(item => (
+              <div
+                id={item.id}
+                onClick={e => this.clickHandler(e, item.id)}
+                key={item.id}
+                className="portfolio-list-item"
+              >
+                <div className="portfolio-list-card hoverable white-trans-box">
+                  <div className="card-body">
+                    <div className="card-content">
+                      <h3 className="card-title">{item.title.rendered}</h3>
+                      <p
+                        className="item-desc"
+                        dangerouslySetInnerHTML={createMarkup(
+                          item.excerpt.rendered
+                        )}
+                      />
+                    </div>
+                    <div className="card-btns">
+                      <a
+                        className="mr-2"
+                        target="_blank"
+                        href={item.acf.github_url}
+                      >
+                        <i className="fa fa-4x fa-github-square" />
+                      </a>
+                      <a target="_blank" href={item.acf.demo_url}>
+                        <i className="fa fa-4x fa-external-link-square" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Row>
-        <Row>
-          <Pagination
-            items={this.state.data}
-            onChangePage={this.onChangePage}
-          />
-        </Row>
+            ))}
+          </Row>
+          <Row>
+            <Pagination
+              items={this.state.data}
+              onChangePage={this.onChangePage}
+            />
+          </Row>
+        </div>
       </div>
     );
   }

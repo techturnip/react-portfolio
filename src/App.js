@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import PortfolioItem from "./components/Portfolio/PortfolioItem";
 import Blog from "./components/Blog/Blog";
+import BlogPost from "./components/Blog/BlogPost";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "./App.scss";
@@ -60,9 +61,20 @@ export default class App extends Component {
           )}
         />
         <Route
+          exact
           path="/blog"
           render={props => (
             <Blog
+              {...props}
+              bgSvg={this.backgroundSvg}
+              createMarkup={this.createMarkup}
+            />
+          )}
+        />
+        <Route
+          path="/blog/:slug"
+          render={props => (
+            <BlogPost
               {...props}
               bgSvg={this.backgroundSvg}
               createMarkup={this.createMarkup}

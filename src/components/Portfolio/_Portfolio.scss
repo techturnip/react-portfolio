@@ -1,28 +1,23 @@
 .portfolio {
-  @include flex-align(space-evenly, center);
+  @include flex-align(center, center);
   @include nav-adjust;
   flex-direction: column;
   flex-wrap: nowrap;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 10%;
-
-  @media #{$break-md} {
-    padding-top: 74px;
-  }
 
   .portfolio-title {
     @include resp-text(3.5rem, 3rem, 2rem);
     font-size: 4rem;
   }
 
-  .portfolio-items {
+  .portfolio-list {
     @include flex-align(center, center);
     cursor: pointer;
   }
 
-  .portfolio-item {
+  .portfolio-list-item {
     display: flex;
     max-width: 48%;
     align-self: stretch;
@@ -41,10 +36,10 @@
     }
   }
 
-  .item-wrapper {
+  .portfolio-list-card {
     padding: 1rem;
 
-    .item-body {
+    .card-body {
       height: 100%;
 
       .fa {
@@ -52,29 +47,54 @@
       }
 
 
-      .item-btns {
-        @include flex-align();
 
-        a {
-          color: $item-btn-color;
-          margin: .5rem;
+    }
+  }
 
-          &:hover {
-            color: $item-btn-color-hover;
-          }
-        }
+  .portfolio-item {
+    padding: 1rem;
+    width: 70%;
+
+    @media #{$break-xl} {
+      width: 100%;
+    }
+
+    .item-body {
+      display: flex;
+      padding: 1rem;
+
+      @media #{$break-sm} {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .content-column,
+    .img-column {
+      padding: 1rem;
+    }
+
+    .img-column {
+      align-content: center;
+
+    }
+
+    .img-fluid {
+      @include box-shadow;
+      border-radius: 10px;
+    }
+  }
+
+  .card-btns {
+    @include flex-align();
+
+    a {
+      color: $item-btn-color;
+      margin: .5rem;
+
+      &:hover {
+        color: $item-btn-color-hover;
       }
     }
   }
 
-  .img-column {
-    display: flex;
-    align-content: center;
-
-  }
-
-  .img-fluid {
-    @include box-shadow;
-    border-radius: 10px;
-  }
 }
