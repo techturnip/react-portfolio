@@ -5,6 +5,22 @@
   background-repeat: no-repeat;
   background-size: contain;
 
+  .container {
+    max-width: 1500px;
+
+    @media #{$break-md} {
+      width: 80%;
+    }
+
+    @media #{$break-md} {
+      width: 95%;
+    }
+
+    @media #{$break-sm} {
+      width: 98%;
+    }
+  }
+
   .about-title {
     @include resp-text(3.5rem, 3rem, 2rem);
     font-size: 4rem;
@@ -12,18 +28,34 @@
   }
 
   .about-content-wrapper {
+    @include flex-align(space-around, center);
+    width: 100%;
     font-size: 1.2rem;
-    padding: 2rem;
     font-weight: 600;
     letter-spacing: .025rem;
+    flex-wrap: nowrap;
+    padding: 2rem 0;
 
-    p {
-      padding: 0;
-      margin: 0;
+    @media #{$break-md} {
+      flex-direction: column-reverse;
+    }
+
+    .col {
+      @include flex-align(center, center);
+      padding: 0 1rem;
+      flex-basis: 50%;
+
+      div {
+        width: 90%;
+      }
     }
   }
 
   .about-img {
-    border: solid 4px $color-primary-0;
+    border: solid 4px $border-color;
+    height: auto;
+    width: 100%;
+    max-width: 427px;
+    min-width: 100px;
   }
 }

@@ -1,29 +1,28 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
-import Navigation from "./components/Navigation/Navigation";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Portfolio from "./components/Portfolio/Portfolio";
-import PortfolioItem from "./components/Portfolio/PortfolioItem";
-import Blog from "./components/Blog/Blog";
-import BlogPost from "./components/Blog/BlogPost";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
-import "./App.scss";
+import Navigation from './components/Navigation/Navigation'
+import Home from './components/Home/Home'
+import About from './components/About/About'
+import Portfolio from './components/Portfolio/Portfolio'
+import PortfolioItem from './components/Portfolio/PortfolioItem'
+import Blog from './components/Blog/Blog'
+import BlogPost from './components/Blog/BlogPost'
+import 'font-awesome/css/font-awesome.min.css'
+import './App.scss'
 
 export default class App extends Component {
   // This method will take in an svg file and return a style object to enable displaying an svg in the background.
   backgroundSvg(svg) {
     const bgStyle = {
-      backgroundImage: "url(" + svg + ")"
-    };
+      backgroundImage: 'url(' + svg + ')'
+    }
 
-    return bgStyle;
+    return bgStyle
   }
 
   createMarkup(content) {
-    return { __html: content };
+    return { __html: content }
   }
 
   render() {
@@ -82,6 +81,6 @@ export default class App extends Component {
           )}
         />
       </div>
-    );
+    )
   }
 }

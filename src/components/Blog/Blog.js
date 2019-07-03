@@ -1,44 +1,43 @@
-import React, { Component } from "react";
-import { Container } from "reactstrap";
-import axios from "axios";
-import blogSvg from "./blog.svg";
+import React, { Component } from 'react'
+import axios from 'axios'
+import blogSvg from './blog.svg'
 
 export default class Blog extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       blogPosts: []
-    };
+    }
   }
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1/wp/wp-json/wp/v2/posts")
+      .get('http://127.0.0.1/wp/wp-json/wp/v2/posts')
       .then(response => {
-        this.setState({ blogPosts: response.data });
+        this.setState({ blogPosts: response.data })
       })
       .catch(error => {
-        console.error("Server Error", error);
-      });
+        console.error('Server Error', error)
+      })
   }
 
   clickHandler = slug => {
-    this.props.history.push(`/blog/${slug}`);
-  };
+    this.props.history.push(`/blog/${slug}`)
+  }
 
   render() {
     return (
       <div style={this.props.bgSvg(blogSvg)} className="blog">
         <div className="page-wrapper">
-          <Container>
+          <div className="container">
             <h1 className="blog-title">My Blog</h1>
 
             <div className="blog-list">
               {this.state.blogPosts.map(post => {
-                console.log(post);
-                const date = new Date(post.date);
-                const metaDate = date.toLocaleDateString();
+                console.log(post)
+                const date = new Date(post.date)
+                const metaDate = date.toLocaleDateString()
                 return (
                   <div
                     className="blog-list-card hoverable white-trans-box"
@@ -56,12 +55,12 @@ export default class Blog extends Component {
                       className="blog-list-excerpt"
                     />
                   </div>
-                );
+                )
               })}
             </div>
-          </Container>
+          </div>
         </div>
       </div>
-    );
+    )
   }
 }

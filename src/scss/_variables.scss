@@ -38,12 +38,18 @@ $white: #ececec;
 $white-trans: rgba(255, 255, 255, 0.7);
 $black: #000;
 $gray: gray;
+$light-gray: rgb(202, 202, 202);
+$light-gray-trans: rgba(185, 185, 185, 0.5);
 $shadow: rgba(51, 51, 51, .8);
+$turqoise: #64FFDA;
 
 // Color Scheme:
 // General
 $dark-text: $onyx;
 $light-text: $white;
+
+// Borders
+$border-color: $light-gray-trans;
 
 // Navigation Colors
 $nav-bg-color: $color-primary-0;
@@ -51,8 +57,8 @@ $nav-text-color: $dark-text;
 // Home Colors
 $title-color: $dark-text;
 // Portfolio Colors
-$item-btn-color: $color-primary-2;
-$item-btn-color-hover: $color-primary-0;
+$item-btn-color: $shadow;
+$item-btn-color-hover: $gray;
 // Blog Colors
 $blog-list-meta-color: $gray;
 

@@ -1,14 +1,34 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
+  padding-top: 74px;
+  margin: 0;
   font-family: $primary-font;
   font-weight: 600;
 }
 
-// Page Wrapper
-.page-wrapper {
-  @include flex-align(center, center);
-  height: 100%;
-  width: 100%;
-  padding: 100px 1rem !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// Lists
+ul {
+  list-style: none;
 }
 
 // Links
@@ -23,15 +43,15 @@ a {
 
 // White Trans Content Box
 .white-trans-box {
-  background: $white-trans;
-  border: solid 4px $color-primary-0;
+  background: #fff;
+  border: solid 4px $border-color;
   border-radius: 10px;
 }
 
 // Hoverable Boxes
 .hoverable {
   @include box-shadow(4px, 8px);
-  transition: .5s ease;
+  transition: .3s ease;
 
   &:hover {
     @include box-shadow(8px, 15px);

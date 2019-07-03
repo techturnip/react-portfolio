@@ -1,29 +1,53 @@
 .nav {
   @include box-shadow;
   background: $nav-bg-color;
+  width: 100%;
   font-size: 1.3rem;
   height: 74px;
-  z-index: 1;
+  position: absolute;
+  top: 0;
 
+
+  .container {
+    @include flex-align(space-between, center);
+
+    @media #{$break-md} {
+      justify-content: center;
+    }
+  }
 
   .navbar-brand {
     font-family: $title-font;
     font-size: 2rem;
     color: $nav-text-color;
     font-weight: 500;
+
+    @media #{$break-md} {
+      display: none;
+    }
   }
 
-  .container {
-    .collapse.show {
+  .nav-list {
+    @include flex-align(center, center);
 
+    .nav-item {
+      color: $nav-text-color;
 
-      .navbar-nav {
-        background: $white-trans;
-        border-radius: 10px;
-        padding: 1rem;
-
-        .nav-item {}
+      &:hover {
+        color: $raisin-black;
       }
+    }
+
+    .nav-item:not(last-child) {
+      padding-right: 2rem;
+
+      @media #{$break-md} {
+        padding-right: 1rem;
+      }
+    }
+
+    .active {
+      color: $raisin-black;
     }
   }
 }
