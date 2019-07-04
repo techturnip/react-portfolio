@@ -9,12 +9,12 @@ html {
 }
 
 body {
-  padding-top: 74px;
   margin: 0;
   font-family: $primary-font;
   font-weight: 600;
 }
 
+// Typography
 h1,
 h2,
 h3,
@@ -24,6 +24,10 @@ h6,
 p {
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 // Lists
@@ -38,6 +42,30 @@ a {
 
   &:hover {
     color: rgb(53, 189, 157);
+  }
+}
+
+.back-link {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  color: $item-btn-color;
+
+  &:hover {
+    color: $item-btn-color-hover;
+  }
+
+  .fa {
+    color: inherit;
+  }
+}
+
+.fa {
+  color: $item-btn-color;
+
+  &:hover {
+    color: $item-btn-color-hover;
   }
 }
 

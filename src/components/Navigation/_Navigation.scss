@@ -3,9 +3,10 @@
   background: $nav-bg-color;
   width: 100%;
   font-size: 1.3rem;
-  height: 74px;
-  position: absolute;
+  height: 5vh;
+  position: sticky;
   top: 0;
+  z-index: 99;
 
 
   .container {

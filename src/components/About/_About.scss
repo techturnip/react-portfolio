@@ -1,15 +1,27 @@
 .about {
-  @include nav-adjust;
+  @include full-page-ele;
   @include flex-align(center, center);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
 
-  .container {
+  .about-title {
+    @include resp-text(3.5rem, 3rem, 2rem);
+    font-size: 4rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .about-content-wrapper {
+    @include flex-align(space-around, center);
+    width: 80%;
     max-width: 1500px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .025rem;
+    flex-wrap: nowrap;
+    padding: 2rem;
 
-    @media #{$break-md} {
-      width: 80%;
+    @media #{$break-lg} {
+      width: 90%;
     }
 
     @media #{$break-md} {
@@ -19,35 +31,9 @@
     @media #{$break-sm} {
       width: 98%;
     }
-  }
-
-  .about-title {
-    @include resp-text(3.5rem, 3rem, 2rem);
-    font-size: 4rem;
-    font-weight: 600;
-  }
-
-  .about-content-wrapper {
-    @include flex-align(space-around, center);
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: .025rem;
-    flex-wrap: nowrap;
-    padding: 2rem 0;
 
     @media #{$break-md} {
       flex-direction: column-reverse;
-    }
-
-    .col {
-      @include flex-align(center, center);
-      padding: 0 1rem;
-      flex-basis: 50%;
-
-      div {
-        width: 90%;
-      }
     }
   }
 
@@ -56,6 +42,11 @@
     height: auto;
     width: 100%;
     max-width: 427px;
-    min-width: 100px;
+    max-height: 427px;
+    margin: 1rem;
+
+    @media #{$break-md} {
+      flex-direction: column-reverse;
+    }
   }
 }

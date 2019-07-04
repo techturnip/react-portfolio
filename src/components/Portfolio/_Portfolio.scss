@@ -1,16 +1,28 @@
 .portfolio {
-  @include flex-align(center, center);
-  @include nav-adjust;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  @include full-page-ele;
+
+  .portfolio-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$break-xs} {
+      display: block;
+    }
+
+    @media #{$break-sm} {
+      display: block;
+      padding-top: 1rem;
+    }
+  }
 
   .portfolio-title {
     @include resp-text(3.5rem, 3rem, 2rem);
     font-size: 4rem;
     text-align: center;
+    width: 100%;
   }
 
   .portfolio-list {
@@ -47,27 +59,29 @@
       padding-bottom: 1rem;
 
       .card-title {
+        font-size: 1.4rem;
         padding-bottom: .5rem;
       }
     }
   }
 
+  .portfolio-item-wrapper {
+    @include flex-align(center, center);
+    height: 100%;
+  }
+
   .portfolio-item {
+    display: flex;
     position: relative;
     padding: 1rem;
     width: 70%;
 
-    @media #{$break-xl} {
-      width: 98%;
+    @media #{$break-sm} {
+      flex-direction: column-reverse;
     }
 
-    .item-body {
-      display: flex;
-      padding: 1rem;
-
-      @media #{$break-sm} {
-        flex-direction: column-reverse;
-      }
+    @media #{$break-xl} {
+      width: 98%;
     }
 
     .content-column {
@@ -76,6 +90,10 @@
       p {
         font-size: 1.2rem;
         padding-bottom: .75rem;
+      }
+
+      .item-content {
+        padding-top: 1rem;
       }
 
       .item-link {
@@ -90,11 +108,15 @@
 
     .content-column,
     .img-column {
-      padding: 1rem;
+      padding-top: 1rem;
     }
 
     .img-column {
       @include flex-align(center, center, column);
+
+      @media #{$break-sm} {
+        padding: 2rem;
+      }
     }
 
     .img-fluid {
@@ -113,21 +135,6 @@
 
     a {
       padding: .5rem 0;
-    }
-  }
-
-  .back-link {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    left: 2rem;
-  }
-
-  .fa {
-    color: $item-btn-color;
-
-    &:hover {
-      color: $item-btn-color-hover;
     }
   }
 

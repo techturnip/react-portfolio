@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Pagination from '../Pagination/Pagination'
 import portfolioSvg from './portfolio.svg'
 
 export default class Portfolio extends Component {
@@ -36,46 +35,48 @@ export default class Portfolio extends Component {
     console.log(this.state)
     return (
       <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
-        <h2 className="portfolio-title">
-          <strong>Check out my Portfolio!</strong>
-        </h2>
-        <div className="portfolio-list">
-          {this.state.data.map(item => (
-            <div
-              id={item.id}
-              onClick={e => this.clickHandler(e, item.id)}
-              key={item.id}
-              className="portfolio-list-item"
-            >
-              <div className="portfolio-list-card hoverable white-trans-box">
-                <div className="card-content">
-                  <h3 className="card-title">{item.title.rendered}</h3>
-                  <p
-                    className="item-desc"
-                    dangerouslySetInnerHTML={createMarkup(
-                      item.excerpt.rendered
-                    )}
-                  />
-                </div>
-                <div className="card-btns">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item.acf.github_url}
-                  >
-                    <i className="fa fa-3x fa-github" />
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item.acf.demo_url}
-                  >
-                    <i className="fa fa-3x fa-external-link" />
-                  </a>
+        <div className="portfolio-wrapper">
+          <h2 className="portfolio-title">
+            <strong>Check out my Portfolio!</strong>
+          </h2>
+          <div className="portfolio-list">
+            {this.state.data.map(item => (
+              <div
+                id={item.id}
+                onClick={e => this.clickHandler(e, item.id)}
+                key={item.id}
+                className="portfolio-list-item"
+              >
+                <div className="portfolio-list-card hoverable white-trans-box">
+                  <div className="card-content">
+                    <h3 className="card-title">{item.title.rendered}</h3>
+                    <p
+                      className="item-desc"
+                      dangerouslySetInnerHTML={createMarkup(
+                        item.excerpt.rendered
+                      )}
+                    />
+                  </div>
+                  <div className="card-btns">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.acf.github_url}
+                    >
+                      <i className="fa fa-3x fa-github" />
+                    </a>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.acf.demo_url}
+                    >
+                      <i className="fa fa-3x fa-external-link" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     )

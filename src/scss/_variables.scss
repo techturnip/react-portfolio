@@ -49,7 +49,7 @@ $dark-text: $onyx;
 $light-text: $white;
 
 // Borders
-$border-color: $light-gray-trans;
+$border-color: $shadow;
 
 // Navigation Colors
 $nav-bg-color: $color-primary-0;
@@ -58,7 +58,7 @@ $nav-text-color: $dark-text;
 $title-color: $dark-text;
 // Portfolio Colors
 $item-btn-color: $shadow;
-$item-btn-color-hover: $gray;
+$item-btn-color-hover: $raisin-black;
 // Blog Colors
 $blog-list-meta-color: $gray;
 
@@ -67,6 +67,7 @@ $blog-list-meta-color: $gray;
 $nav-height: 74px;
 
 // Media Variables
+$break-xs: 'only screen and (max-width: 500px)';
 $break-sm: 'only screen and (max-width: 768px)';
 $break-md: 'only screen and (max-width: 992px)';
 $break-lg: 'only screen and (max-width: 1200px)';

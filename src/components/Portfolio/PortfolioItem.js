@@ -38,8 +38,8 @@ export default class PortfolioItem extends Component {
     const { createMarkup } = this.props
     return (
       <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
-        <div className="portfolio-item white-trans-box">
-          <div className="item-body">
+        <div className="portfolio-item-wrapper">
+          <div className="portfolio-item white-trans-box">
             <div class="content-column">
               <div className="item-content">
                 <Link className="back-link" to="/portfolio">

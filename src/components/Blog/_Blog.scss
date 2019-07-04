@@ -1,18 +1,21 @@
 .blog {
-  @include flex-align(center, center);
-  @include nav-adjust;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  @include full-page-ele;
+  @include flex-align(center, center, column);
 
   p {
     margin: 0;
   }
 
   .blog-post-wrapper {
+    position: relative;
     padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
 
     .blog-post-content {
+      font-size: 1.2rem;
+      letter-spacing: .08rem;
+
       p {
         margin: 1rem 0;
       }
@@ -20,6 +23,7 @@
 
     .blog-post-title {
       @include flex-align(center, center);
+      border-bottom: solid 1px $border-color;
     }
   }
 
@@ -33,9 +37,10 @@
 
   .blog-list {
     @include flex-align(center, center);
+    width: 100%;
 
     .blog-list-card {
-      @include flex-align(center, center);
+      @include flex-align(center, center, column);
       cursor: pointer;
       padding: 1rem;
       flex-basis: 31%;
@@ -47,17 +52,19 @@
     }
 
     .blog-list-title {
+      font-size: 1.4rem;
       display: flex;
       align-items: center;
       font-weight: bold;
       margin: 0;
+      padding-bottom: .5rem;
     }
   }
 
   .blog-list-meta,
   .blog-post-meta {
     font-weight: 500;
-    margin-left: .5rem;
+    margin-left: 1rem;
     color: $blog-list-meta-color;
     font-size: 1rem;
   }

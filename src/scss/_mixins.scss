@@ -25,9 +25,9 @@
   }
 }
 
-@mixin nav-adjust() {
-  height: 100vh;
-  margin-top: -$nav-height;
-  width: 100%;
-  padding-top: $nav-height;
+@mixin full-page-ele() {
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
