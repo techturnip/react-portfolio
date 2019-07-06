@@ -1,6 +1,11 @@
 .portfolio {
   @include full-page-ele;
 
+  @media #{$break-lg} {
+    height: auto;
+    padding-top: 5%;
+  }
+
   .portfolio-wrapper {
     height: 100%;
     display: flex;
@@ -9,12 +14,15 @@
     align-items: center;
 
     @media #{$break-xs} {
-      display: block;
+      // display: block;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
 
     @media #{$break-sm} {
-      display: block;
-      padding-top: 1rem;
+      // display: block;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 
@@ -23,6 +31,11 @@
     font-size: 4rem;
     text-align: center;
     width: 100%;
+
+    @media #{$break-sm} {
+      padding-bottom: 3%;
+    }
+
   }
 
   .portfolio-list {

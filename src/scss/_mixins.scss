@@ -25,8 +25,9 @@
   }
 }
 
-@mixin full-page-ele() {
-  height: 95vh;
+@mixin full-page-ele($height: 94vh, $width: 100%) {
+  height: $height;
+  width: $width;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

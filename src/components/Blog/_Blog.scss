@@ -2,6 +2,11 @@
   @include full-page-ele;
   @include flex-align(center, center, column);
 
+  @media #{$break-lg} {
+    height: auto;
+    padding-top: 10%;
+  }
+
   p {
     margin: 0;
   }
