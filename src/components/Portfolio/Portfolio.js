@@ -1,25 +1,42 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import portfolioSvg from './portfolio.svg'
+import Pagination from '../Pagination/Pagination'
 
 export default class Portfolio extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      data: []
+      data: [],
+      page: '',
+      totalPages: '',
+      totalItems: '',
+      postsPerPage: 3
     }
   }
 
   componentDidMount() {
+    const { postsPerPage } = this.state
+
     axios
-      .get('http://127.0.0.1/wp/wp-json/wp/v2/portfolio')
-      .then(response => {
-        console.log(response)
-        this.setState({ data: response.data })
+      .get(
+        `http://127.0.0.1/wp/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=1`
+      )
+      .then(res => {
+        // console.log(res)
+        const data = res.data
+        const totalPages = res.headers['x-wp-totalpages']
+        const totalItems = res.headers['x-wp-total']
+        this.setState({
+          data,
+          page: '1',
+          totalPages,
+          totalItems
+        })
       })
-      .catch(error => {
-        console.error('Server Error', error)
+      .catch(err => {
+        console.error('Server Error', err)
       })
   }
 
@@ -30,9 +47,37 @@ export default class Portfolio extends Component {
     }
   }
 
+  getNewPage = page => {
+    const { postsPerPage } = this.state
+
+    axios
+      .get(
+        `http://127.0.0.1/wp/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=${page}`
+      )
+      .then(res => {
+        const data = res.data
+        const totalPages = res.headers['x-wp-totalpages']
+        const totalItems = res.headers['x-wp-total']
+        this.setState({
+          data,
+          pagination: { page, totalPages, totalItems }
+        })
+      })
+      .catch(err => {
+        console.error('Server Error', err)
+      })
+  }
+
   render() {
     const { createMarkup } = this.props
-    console.log(this.state)
+    const { page, totalPages, totalItems } = this.state
+
+    const paginationProps = {
+      page,
+      totalPages,
+      totalItems
+    }
+    // console.log(this.state)
     return (
       <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
         <div className="portfolio-wrapper">
@@ -76,6 +121,12 @@ export default class Portfolio extends Component {
                 </div>
               </div>
             ))}
+            {totalPages > 1 && (
+              <Pagination
+                pagination={paginationProps}
+                getNewPage={this.getNewPage}
+              />
+            )}
           </div>
         </div>
       </div>

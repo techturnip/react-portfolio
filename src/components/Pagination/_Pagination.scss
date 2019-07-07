@@ -1,0 +1,21 @@
+.pagination {
+  @include flex-align(center, center);
+  width: 100%;
+  cursor: auto;
+
+  .pagination-list {
+    display: flex;
+
+    .pagination-item {
+      cursor: pointer;
+      border: solid 1px $border-color;
+      padding: .25rem;
+      background-color: white;
+      border-radius: 4px;
+
+      &:not(last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
