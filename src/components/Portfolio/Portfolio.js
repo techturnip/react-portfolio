@@ -21,7 +21,7 @@ export default class Portfolio extends Component {
 
     axios
       .get(
-        `http://127.0.0.1/wp/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=1`
+        `http://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=1`
       )
       .then(res => {
         // console.log(res)
@@ -52,7 +52,7 @@ export default class Portfolio extends Component {
 
     axios
       .get(
-        `http://127.0.0.1/wp/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=${page}`
+        `http://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=${page}&_embed`
       )
       .then(res => {
         const data = res.data

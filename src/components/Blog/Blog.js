@@ -13,7 +13,7 @@ export default class Blog extends Component {
 
   componentDidMount() {
     axios
-      .get('http://127.0.0.1/wp/wp-json/wp/v2/posts')
+      .get('http://api.techturnip.us/wp-json/wp/v2/posts')
       .then(response => {
         this.setState({ blogPosts: response.data })
       })
@@ -29,32 +29,36 @@ export default class Blog extends Component {
   render() {
     return (
       <div style={this.props.bgSvg(blogSvg)} className="blog">
-        <h1 className="blog-title">My Blog</h1>
+        <div className="blog-list-wrapper">
+          <div>
+            <h1 className="blog-title">My Blog</h1>
 
-        <div className="blog-list">
-          {this.state.blogPosts.map(post => {
-            console.log(post)
-            const date = new Date(post.date)
-            const metaDate = date.toLocaleDateString()
-            return (
-              <div
-                className="blog-list-card hoverable white-trans-box"
-                key={post.id}
-                onClick={() => this.clickHandler(post.slug)}
-              >
-                <h4 className="blog-list-title">
-                  {post.title.rendered}
-                  <span className="blog-list-meta">{metaDate}</span>
-                </h4>
-                <p
-                  dangerouslySetInnerHTML={this.props.createMarkup(
-                    post.excerpt.rendered
-                  )}
-                  className="blog-list-excerpt"
-                />
-              </div>
-            )
-          })}
+            <div className="blog-list">
+              {this.state.blogPosts.map(post => {
+                console.log(post)
+                const date = new Date(post.date)
+                const metaDate = date.toLocaleDateString()
+                return (
+                  <div
+                    className="blog-list-card hoverable white-trans-box"
+                    key={post.id}
+                    onClick={() => this.clickHandler(post.slug)}
+                  >
+                    <h4 className="blog-list-title">
+                      {post.title.rendered}
+                      <span className="blog-list-meta">{metaDate}</span>
+                    </h4>
+                    <p
+                      dangerouslySetInnerHTML={this.props.createMarkup(
+                        post.excerpt.rendered
+                      )}
+                      className="blog-list-excerpt"
+                    />
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     )

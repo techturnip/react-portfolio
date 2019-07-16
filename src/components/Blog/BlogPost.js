@@ -15,7 +15,7 @@ export default class BlogPost extends Component {
     const slug = this.props.match.params.slug
 
     axios
-      .get(`http://127.0.0.1/wp/wp-json/wp/v2/posts?slug=${slug}`)
+      .get(`http://api.techturnip.us/wp-json/wp/v2/posts?slug=${slug}`)
       .then(res => {
         const { title, content, date } = res.data[0]
         console.log(res.data[0])

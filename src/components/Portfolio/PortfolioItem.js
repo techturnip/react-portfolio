@@ -16,10 +16,10 @@ export default class PortfolioItem extends Component {
     const id = this.props.match.params.id
 
     axios
-      .get(`http://127.0.0.1/wp/wp-json/wp/v2/portfolio/${id}`)
+      .get(`http://api.techturnip.us/wp-json/wp/v2/portfolio/${id}`)
       .then(res => {
+        console.log(res.data)
         const { acf, content, title } = res.data
-        console.log(res)
         this.setState({
           title: title.rendered,
           content: content.rendered,
@@ -40,7 +40,7 @@ export default class PortfolioItem extends Component {
       <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
         <div className="portfolio-item-wrapper">
           <div className="portfolio-item white-trans-box">
-            <div class="content-column">
+            <div className="content-column">
               <div className="item-content">
                 <Link className="back-link" to="/portfolio">
                   <i className="fa fa-long-arrow-left" /> Back to Portfolio

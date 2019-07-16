@@ -1,6 +1,6 @@
 .portfolio {
   @include full-page-ele;
-  display: relative;
+  position: relative;
 
   @media #{$break-lg} {
     height: auto;
