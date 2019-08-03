@@ -9,9 +9,15 @@ import PortfolioItem from './components/Portfolio/PortfolioItem'
 import Blog from './components/Blog/Blog'
 import BlogPost from './components/Blog/BlogPost'
 import 'font-awesome/css/font-awesome.min.css'
+import M from 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css'
 import './App.scss'
 
 export default class App extends Component {
+  componentDidMount() {
+    M.AutoInit()
+  }
+
   // This method will take in an svg file and return a style object to enable displaying an svg in the background.
   backgroundSvg(svg) {
     const bgStyle = {

@@ -12,7 +12,7 @@ export default class Portfolio extends Component {
       page: '',
       totalPages: '',
       totalItems: '',
-      postsPerPage: 3
+      postsPerPage: 4
     }
   }
 

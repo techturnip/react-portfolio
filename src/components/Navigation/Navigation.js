@@ -1,51 +1,63 @@
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
+import { Navbar, NavItem } from 'react-materialize'
 
-export default class Navigation extends Component {
+class Navigation extends Component {
+  setActiveClass = e => {
+    const linkList = e.target.parentNode.parentNode.children
+    const target = e.target.innerHTML
+
+    for (let i = 0; i < linkList.length; i++) {
+      if (linkList[i].querySelector('a').innerHTML === target) {
+        linkList[i].classList.add('active')
+      } else {
+        linkList[i].classList.remove('active')
+      }
+    }
+  }
+
   render() {
     return (
-      <nav className="nav">
-        <div className="container">
-          <Link className="navbar-brand" href="/">
-            techTurnip
-          </Link>
-          <ul className="nav-list">
-            <li>
-              <NavLink
-                className="nav-item"
-                activeClassName="active"
-                exact
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="nav-item"
-                activeClassName="active"
-                to="/about"
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="nav-item"
-                activeClassName="active"
-                to="/portfolio"
-              >
-                Portfolio
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-item" activeClassName="active" to="/blog">
-                Blog
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar
+        className="navbar"
+        brand={<Link to="/">techTurnip</Link>}
+        alignLinks="right"
+      >
+        <NavItem
+          onClick={e => {
+            this.setActiveClass(e)
+            this.props.history.push('/')
+          }}
+        >
+          Home
+        </NavItem>
+        <NavItem
+          onClick={e => {
+            this.setActiveClass(e)
+            this.props.history.push('/about')
+          }}
+        >
+          About
+        </NavItem>
+        <NavItem
+          onClick={e => {
+            this.setActiveClass(e)
+            this.props.history.push('/portfolio')
+          }}
+        >
+          Portfolio
+        </NavItem>
+        <NavItem
+          onClick={e => {
+            this.setActiveClass(e)
+            this.props.history.push('/blog')
+          }}
+        >
+          Blog
+        </NavItem>
+      </Navbar>
     )
   }
 }
+
+export default withRouter(Navigation)

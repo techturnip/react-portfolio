@@ -17,5 +17,10 @@
         margin-right: 1rem;
       }
     }
+
+    .disabled {
+      background-color: rgb(233, 233, 233);
+      cursor: default;
+    }
   }
 }
