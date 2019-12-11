@@ -85,7 +85,7 @@ export default class PortfolioItem extends Component {
               </div>
             </div>
             <div className="img-column">
-              <img className="img-fluid" src={img} />
+              <img className="img-fluid" alt="Portfolio item screenshot" src={img} />
             </div>
           </div>
         </div>

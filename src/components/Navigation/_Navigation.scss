@@ -36,3 +36,21 @@
     }
   }
 }
+
+.sidenav-trigger {
+  background: none;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+
+  &:focus {
+    outline: 0;
+    background: none;
+  }
+
+  @media  #{$break-md} {
+    display: block;
+  }
+}

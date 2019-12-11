@@ -15,7 +15,7 @@ export default function About(props) {
             JavaScript libraries/frameworks like React and Angular 2+.
           </p>
         </div>
-        <img className="about-img img-circle" src={me} />
+        <img className="about-img img-circle" alt="Tyler Turnipseed" src={me} />
       </div>
     </section>
   )
