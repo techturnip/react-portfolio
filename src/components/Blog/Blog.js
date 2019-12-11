@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import blogSvg from './blog.svg'
+import { Preloader } from 'react-materialize'
 
 export default class Blog extends Component {
   constructor(props) {
@@ -27,20 +28,22 @@ export default class Blog extends Component {
   }
 
   render() {
+    const isLoading = this.state.blogPosts.length
     return (
+      
       <div style={this.props.bgSvg(blogSvg)} className="blog">
         <div className="blog-list-wrapper">
           <div>
             <h1 className="blog-title">My Blog</h1>
 
             <div className="blog-list">
-              {this.state.blogPosts.map(post => {
+              {isLoading ? this.state.blogPosts.map(post => {
                 console.log(post)
                 const date = new Date(post.date)
                 const metaDate = date.toLocaleDateString()
                 return (
                   <div
-                    className="blog-list-card hoverable white-trans-box"
+                    className={`blog-list-card hoverable white-box ${isLoading ? 'fade-in' : null}`}
                     key={post.id}
                     onClick={() => this.clickHandler(post.slug)}
                   >
@@ -56,7 +59,13 @@ export default class Blog extends Component {
                     />
                   </div>
                 )
-              })}
+              }) :
+                  <div className="white-box">
+                    <div className="loading">
+                      <Preloader />
+                    </div>
+                  </div>
+              }
             </div>
           </div>
         </div>

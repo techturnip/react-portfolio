@@ -34,7 +34,8 @@ $color-complement-4: #078733;
 $raisin-black: rgb(31, 36, 39);
 $raisin-black-trans: rgba(34, 34, 34, .8);
 $onyx: #393838;
-$white: #ececec;
+$white: #fff;
+$off-white: #ececec;
 $white-trans: rgba(255, 255, 255, 0.7);
 $black: #000;
 $gray: gray;
@@ -48,19 +49,26 @@ $turqoise: #64FFDA;
 $dark-text: $onyx;
 $light-text: $white;
 
+// Background color
+$bg-primary: $white;
+$bg-dark: $onyx;
+$bg-off-white: $off-white;
+
 // Border
-$border-color: $shadow;
+$border-color: $color-secondary-1-0;
 
 // Navigation Colors
-$nav-bg-color: $color-primary-0;
+$nav-bg-color: $color-complement-0;
 $nav-text-color: $dark-text;
+$nav-text-hover-color: $light-text;
+$nav-brand-hover-color: $color-secondary-1-0;
 
 // Home Colors
 $title-color: $dark-text;
 
 // Portfolio Colors
 $item-btn-color: $shadow;
-$item-btn-color-hover: $raisin-black;
+$item-btn-color-hover: $color-secondary-1-0;
 
 // Blog Colors
 $blog-list-meta-color: $gray;
@@ -68,12 +76,15 @@ $blog-list-meta-color: $gray;
 // Typography colors
 // Blockquote
 $blockquote-border-color: $color-primary-0;
-$blockquote-bg-color: $white;
+$blockquote-bg-color: $off-white;
 $blockquote-quote-mark-color: $raisin-black;
 
 // Layout variables
 // Navigation
-$nav-height: 74px;
+$nav-height: 64px;
+
+// calc 100vh height accounting for nav height
+$nav-vh-calc: calc(100vh - #{$nav-height});
 
 // Media Variables
 $break-xs: 'only screen and (max-width: 500px)';

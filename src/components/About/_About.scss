@@ -1,5 +1,6 @@
 .about {
-  @include full-page-ele;
+  @include bg-mixin;
+  @include nav-adjust;
   @include flex-align(center, center);
 
   .about-title {

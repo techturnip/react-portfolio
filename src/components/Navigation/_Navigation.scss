@@ -1,0 +1,38 @@
+.navbar {
+  background: $nav-bg-color;
+
+  .brand-logo {
+    font-family: $title-font;
+    margin-left: 1rem;
+    color: $nav-text-color;
+
+    &:hover {
+      color: $nav-text-hover-color;
+    }
+  }
+
+  .brand-logo,
+  a {
+    transition: 0.5s;
+  }
+
+  .nav-wrapper {
+    ul {
+      li {
+        a {
+          color: $nav-text-color;
+
+          &:hover {
+            color: $nav-text-hover-color;
+          }
+        }
+      }
+
+      .active {
+        a {
+          color: $nav-text-hover-color;
+        }
+      }
+    }
+  }
+}

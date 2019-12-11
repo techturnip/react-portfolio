@@ -1,10 +1,7 @@
 .home {
-  @include full-page-ele;
-
-  .wrapper {
-    @include flex-align(center, center);
-    height: 100%;
-  }
+  @include nav-adjust;
+  @include bg-mixin;
+  @include flex-align(center, center);
 
   .title-wrapper {
     color: $title-color;

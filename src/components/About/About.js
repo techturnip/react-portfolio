@@ -5,7 +5,7 @@ import me from './me.jpg'
 export default function About(props) {
   return (
     <section style={props.bgSvg(aboutSvg)} className="about">
-      <div className="about-content-wrapper white-trans-box">
+      <div className="about-content-wrapper white-box fade-in">
         <div>
           <h2 className="about-title">About Me</h2>
           <p>

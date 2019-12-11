@@ -7,6 +7,11 @@
   flex-wrap: $wrap;
 }
 
+@mixin nav-adjust($height: $nav-vh-calc) {
+  min-height: $height;
+  width: 100%;
+}
+
 @mixin box-shadow($size: 5px, $blur: 10px) {
   box-shadow: 0 $size $blur $shadow;
 }
@@ -25,10 +30,9 @@
   }
 }
 
-@mixin full-page-ele($height: 94vh, $width: 100%) {
-  height: $height;
-  width: $width;
+@mixin bg-mixin {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  background-attachment: fixed;
 }

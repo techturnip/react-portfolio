@@ -12,6 +12,7 @@ body {
   margin: 0;
   font-family: $primary-font;
   font-weight: 500;
+  background: $bg-primary;
 }
 
 // Typography
@@ -36,7 +37,9 @@ ul {
 }
 
 // Links
-a {
+a,
+.fa {
+  transition: .5s;
   color: rgb(83, 228, 194);
   text-decoration: none;
 
@@ -71,9 +74,30 @@ a {
 
 // White Trans Content Box
 .white-trans-box {
-  background: #fff;
+  background: $white;
   border: solid 4px $border-color;
   border-radius: 10px;
+}
+
+.white-box {
+  background: $white;
+  border: solid 4px $border-color;
+  border-radius: 10px;
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 // Hoverable Boxes
@@ -90,4 +114,13 @@ a {
 // Circle images
 .img-circle {
   border-radius: 100%;
+}
+
+// Loading spinner
+.loading {
+  margin: 5rem 10rem;
+
+  .spinner-blue-only {
+    border-color: $color-primary-0;
+  }
 }

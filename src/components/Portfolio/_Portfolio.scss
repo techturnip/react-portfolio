@@ -1,10 +1,11 @@
 .portfolio {
-  @include full-page-ele;
+  @include bg-mixin;
+  @include nav-adjust;
+  @include flex-align(center, center);
   position: relative;
 
   @media #{$break-lg} {
     height: auto;
-    padding-top: 5%;
   }
 
   .portfolio-wrapper {
@@ -32,6 +33,7 @@
     font-size: 4rem;
     text-align: center;
     width: 100%;
+    margin: 2rem 0;
 
     @media #{$break-sm} {
       padding-bottom: 3%;
@@ -76,6 +78,10 @@
         font-size: 1.4rem;
         padding-bottom: .5rem;
       }
+
+      .item-desc>p {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -87,7 +93,7 @@
   .portfolio-item {
     display: flex;
     position: relative;
-    padding: 1rem;
+    padding: 2rem;
     width: 70%;
 
     @media #{$break-sm} {
@@ -127,8 +133,13 @@
 
     .img-column {
       @include flex-align(center, center, column);
+      padding: 2rem;
+      border-left: solid 1px $border-color;
+      margin-left: 2rem;
 
       @media #{$break-sm} {
+        border: none;
+        margin: 0;
         padding: 2rem;
       }
     }
@@ -145,7 +156,7 @@
     @include flex-align(center, center, column);
     padding-left: 1rem;
     margin-left: 1rem;
-    border-left: solid 1px $light-gray-trans;
+    border-left: solid 1px $border-color;
 
     a {
       padding: .5rem 0;

@@ -1,10 +1,11 @@
 .blog {
-  @include full-page-ele;
+  @include bg-mixin;
+  @include nav-adjust;
+  @include flex-align(center, center);
   position: relative;
 
   @media #{$break-lg} {
     height: auto;
-    padding-top: 10%;
   }
 
   p {
@@ -15,13 +16,22 @@
   .blog-post-wrapper {
     position: relative;
     padding: 2rem;
-    max-width: 1400px;
-    margin: 1rem auto;
+    max-width: 960px;
+    margin: 2rem auto;
 
     // Content styles
     .blog-post-content {
       font-size: 1.2rem;
       letter-spacing: .1rem;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 2rem;
+      }
 
       h1 {
         @include resp-text(2.75rem, 2.5rem, 2rem);
@@ -95,7 +105,7 @@
   .blog-post-title {
     @include resp-text(3.75rem, 3.5rem, 3rem);
     font-size: 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     text-align: center;
   }
 
