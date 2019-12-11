@@ -60,7 +60,7 @@ export default class Portfolio extends Component {
     // axios call to get the next page of posts
     axios
       .get(
-        `http://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=${page}&_embed`
+        `https://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=${page}&_embed`
       )
       .then(res => {
         // handle paginated response data

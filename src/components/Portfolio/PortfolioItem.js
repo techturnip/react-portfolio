@@ -18,7 +18,7 @@ export default class PortfolioItem extends Component {
     const id = this.props.match.params.id
 
     axios
-      .get(`http://api.techturnip.us/wp-json/wp/v2/portfolio/${id}`)
+      .get(`https://api.techturnip.us/wp-json/wp/v2/portfolio/${id}`)
       .then(res => {
         console.log(res.data)
         const { acf, content, title } = res.data

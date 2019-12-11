@@ -14,7 +14,7 @@ export default class Blog extends Component {
 
   componentDidMount() {
     axios
-      .get('http://api.techturnip.us/wp-json/wp/v2/posts')
+      .get('https://api.techturnip.us/wp-json/wp/v2/posts')
       .then(response => {
         this.setState({ blogPosts: response.data })
       })
