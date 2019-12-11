@@ -24,7 +24,7 @@ export default class Portfolio extends Component {
     // pull in initial set of posts
     axios
       .get(
-        `http://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=1`
+        `https://api.techturnip.us/wp-json/wp/v2/portfolio?per_page=${postsPerPage}&page=1`
       )
       .then(res => {
         // set up for paginated data

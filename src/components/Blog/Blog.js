@@ -38,7 +38,6 @@ export default class Blog extends Component {
 
             <div className="blog-list">
               {isLoading ? this.state.blogPosts.map(post => {
-                console.log(post)
                 const date = new Date(post.date)
                 const metaDate = date.toLocaleDateString()
                 return (

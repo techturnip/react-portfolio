@@ -20,7 +20,6 @@ export default class PortfolioItem extends Component {
     axios
       .get(`https://api.techturnip.us/wp-json/wp/v2/portfolio/${id}`)
       .then(res => {
-        console.log(res.data)
         const { acf, content, title } = res.data
         this.setState({
           title: title.rendered,

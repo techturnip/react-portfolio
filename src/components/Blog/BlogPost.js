@@ -20,7 +20,6 @@ export default class BlogPost extends Component {
       .get(`https://api.techturnip.us/wp-json/wp/v2/posts?slug=${slug}`)
       .then(res => {
         const { title, content, date } = res.data[0]
-        console.log(res.data[0])
         this.setState({
           title: title.rendered,
           content: content.rendered,
@@ -28,11 +27,10 @@ export default class BlogPost extends Component {
           isLoading: false
         })
       })
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
   }
 
   render() {
-    console.log(this.state.isLoading)
     const { title, content, date, isLoading } = this.state
     const metaDate = date.toLocaleString()
     const { createMarkup } = this.props
