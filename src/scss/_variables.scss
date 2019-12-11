@@ -36,7 +36,7 @@ $raisin-black-trans: rgba(34, 34, 34, .8);
 $onyx: #393838;
 $white: #fff;
 $off-white: #ececec;
-$white-trans: rgba(255, 255, 255, 0.7);
+$white-trans: rgba(255, 255, 255, 0.9);
 $black: #000;
 $gray: gray;
 $light-gray: rgb(202, 202, 202);
@@ -55,7 +55,7 @@ $bg-dark: $onyx;
 $bg-off-white: $off-white;
 
 // Border
-$border-color: $color-secondary-1-0;
+$border-color: $shadow;
 
 // Navigation Colors
 $nav-bg-color: $color-complement-0;

@@ -1,5 +1,7 @@
 .navbar {
   background: $nav-bg-color;
+  z-index: 999;
+  position: fixed;
 
   .brand-logo {
     font-family: $title-font;

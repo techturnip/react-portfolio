@@ -3,6 +3,9 @@
   @include nav-adjust;
   @include flex-align(center, center);
 
+  @media #{$break-sm} {
+  }
+
   .about-title {
     @include resp-text(3.5rem, 3rem, 2rem);
     font-size: 4rem;
@@ -13,33 +16,23 @@
 
   .about-content-wrapper {
     @include flex-align(space-around, center);
-    width: 80%;
-    max-width: 1500px;
+    max-width: 962px;
     font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: .025rem;
     flex-wrap: nowrap;
     padding: 2rem;
-
-    @media #{$break-lg} {
-      width: 90%;
-    }
-
-    @media #{$break-md} {
-      width: 95%;
-    }
-
-    @media #{$break-sm} {
-      width: 98%;
-    }
+    margin: 1rem;
 
     @media #{$break-md} {
       flex-direction: column-reverse;
     }
+
+    @media #{$break-sm} {
+      margin: 0;
+    }
   }
 
   .about-img {
-    border: solid 4px $border-color;
+    @include box-shadow;
     height: auto;
     width: 100%;
     max-width: 427px;

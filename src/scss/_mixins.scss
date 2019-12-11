@@ -7,9 +7,14 @@
   flex-wrap: $wrap;
 }
 
-@mixin nav-adjust($height: $nav-vh-calc) {
+@mixin nav-adjust($height: 100vh) {
   min-height: $height;
   width: 100%;
+  padding-top: 64px;
+
+  @media only screen and (max-width: 600px) {
+    padding-top: 56px;
+  }
 }
 
 @mixin box-shadow($size: 5px, $blur: 10px) {

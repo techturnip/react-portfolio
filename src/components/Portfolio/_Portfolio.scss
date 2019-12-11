@@ -8,6 +8,9 @@
     height: auto;
   }
 
+  @media #{$break-sm} {
+  }
+
   .portfolio-wrapper {
     height: 100%;
     display: flex;
@@ -86,15 +89,12 @@
   }
 
   .portfolio-item-wrapper {
-    @include flex-align(center, center);
-    height: 100%;
   }
 
   .portfolio-item {
     display: flex;
     position: relative;
     padding: 2rem;
-    width: 70%;
 
     @media #{$break-sm} {
       flex-direction: column-reverse;

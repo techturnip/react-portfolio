@@ -53,7 +53,6 @@ export default class PortfolioItem extends Component {
 
     return (
        <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
-        <div className="portfolio-item-wrapper">
             <div className={`portfolio-item white-box ${!isLoading ? 'fade-in' : null}`}>
             <div className="content-column">
               <div className="item-content">
@@ -87,7 +86,6 @@ export default class PortfolioItem extends Component {
               <img className="img-fluid" alt="Portfolio item screenshot" src={img} />
             </div>
           </div>
-        </div>
       </div>
     )
   }

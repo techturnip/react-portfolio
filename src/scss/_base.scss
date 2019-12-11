@@ -83,6 +83,12 @@ a,
   background: $white;
   border: solid 4px $border-color;
   border-radius: 10px;
+
+  @media #{$break-sm} {
+    border: none;
+    width: 100%;
+    background: $white-trans;
+  }
 }
 
 .fade-in {
@@ -118,6 +124,7 @@ a,
 
 // Loading spinner
 .loading {
+  @include flex-align(center, center);
   margin: 5rem 10rem;
 
   .spinner-blue-only {
