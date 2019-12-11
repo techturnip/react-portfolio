@@ -64,27 +64,37 @@ export default class PortfolioItem extends Component {
                     className="item-desc"
                     dangerouslySetInnerHTML={createMarkup(content)}
                   />
-                  <a
-                    className="item-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={github}
-                  >
-                    <i className="fa fa-4x fa-github" />
-                  </a>
-                  <a
-                    className="item-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={demo}
-                  >
-                    <i className="fa fa-4x fa-external-link" />
-                  </a>
+                  {github.length ? (
+                    <a
+                      className="item-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={github}
+                    >
+                      <i className="fa fa-4x fa-github" />
+                    </a>
+                  ) : null }
+                  
+                  {demo.length ? (
+                    <a
+                      className="item-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={demo}
+                    >
+                      <i className="fa fa-4x fa-external-link" />
+                    </a>
+                  
+                  ) : null }
+                  
               </div>
             </div>
-            <div className="img-column">
+            {img.length ? 
+            (<div className="img-column">
               <img className="img-fluid" alt="Portfolio item screenshot" src={img} />
-            </div>
+            </div>)
+            : null}
+            
           </div>
       </div>
     )

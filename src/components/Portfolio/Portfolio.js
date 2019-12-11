@@ -96,7 +96,9 @@ export default class Portfolio extends Component {
             Check out my Portfolio!
           </h2>
           <div className="portfolio-list">
-            {!isLoading ? this.state.data.map(item => (
+            {!isLoading ? this.state.data.map(item => {
+            const { github_url, demo_url } = item.acf
+            return (
               <div
                 id={item.id}
                 onClick={e => this.clickHandler(e, item.id)}
@@ -114,24 +116,30 @@ export default class Portfolio extends Component {
                     />
                   </div>
                   <div className="card-btns">
-                    <a
+                    {github_url.length ? 
+                      (<a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={github_url}
+                      >
+                        <i className="fa fa-3x fa-github" />
+                      </a>)
+                    : null}
+                    
+                    {demo_url.length ? 
+                      (<a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href={item.acf.github_url}
-                    >
-                      <i className="fa fa-3x fa-github" />
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.acf.demo_url}
+                      href={demo_url}
                     >
                       <i className="fa fa-3x fa-external-link" />
-                    </a>
+                    </a>)
+                    : null}
+                    
                   </div>
                 </div>
               </div>
-            )) : ( 
+            )}) : ( 
               <div className="white-box">
                 <div className="loading">
                   <Preloader active color="red" size="big" />

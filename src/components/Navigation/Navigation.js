@@ -10,7 +10,7 @@ class Navigation extends Component {
     return (
       <>
         <nav className="navbar">
-          <div class="nav-wrapper">
+          <div className="nav-wrapper">
             <Link to="/" className="brand-logo">
               techTurnip
             </Link>

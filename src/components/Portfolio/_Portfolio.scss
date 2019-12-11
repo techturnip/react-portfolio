@@ -95,8 +95,9 @@
     display: flex;
     position: relative;
     padding: 2rem;
+    max-width: 1200px;
 
-    @media #{$break-sm} {
+    @media #{$break-md} {
       flex-direction: column-reverse;
     }
 
@@ -137,7 +138,7 @@
       border-left: solid 1px $border-color;
       margin-left: 2rem;
 
-      @media #{$break-sm} {
+      @media #{$break-md} {
         border: none;
         margin: 0;
         padding: 2rem;
