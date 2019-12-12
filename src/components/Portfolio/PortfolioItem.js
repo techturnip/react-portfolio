@@ -41,7 +41,7 @@ export default class PortfolioItem extends Component {
 
     if (isLoading) {
       return ( 
-      <div className="portfolio">
+      <div style={this.props.bgSvg(portfolioSvg)} className="portfolio">
         <div className="white-box">
           <div className="loading">
             <Preloader />
