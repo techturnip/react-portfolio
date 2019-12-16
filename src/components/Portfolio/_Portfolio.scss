@@ -8,15 +8,12 @@
     height: auto;
   }
 
-  @media #{$break-sm} {
-  }
+  @media #{$break-sm} {}
 
   .portfolio-wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     @media #{$break-xs} {
       // display: block;
@@ -45,20 +42,22 @@
   }
 
   .portfolio-list {
-    @include flex-align(space-evenly, center);
+    @include flex-align(center, center);
     cursor: pointer;
+    max-width: 1200px;
+    align-self: center;
   }
 
   .portfolio-list-item {
     display: flex;
-    max-width: 30%;
+    max-width: 45%;
     align-self: stretch;
-    margin: 1% 0;
+    margin: 1% 1%;
     position: relative;
 
     @media #{$break-xl} {
       max-width: 45%;
-      margin: 1.5% 0;
+      margin: 1.5% 1.5%;
     }
 
     @media #{$break-lg} {
@@ -75,7 +74,6 @@
     padding: 1rem;
 
     .card-content {
-      padding-bottom: 1rem;
 
       .card-title {
         font-size: 1.4rem;
@@ -86,9 +84,6 @@
         font-size: 1rem;
       }
     }
-  }
-
-  .portfolio-item-wrapper {
   }
 
   .portfolio-item {
