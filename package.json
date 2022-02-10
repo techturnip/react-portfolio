@@ -10,7 +10,7 @@
     "lodash.template": "^4.5.0",
     "materialize-css": "^1.0.0",
     "mixin-deep": "^2.0.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
